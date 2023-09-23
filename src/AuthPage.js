@@ -21,7 +21,7 @@ const onSubmit = (e) => {
 
   if (isLogin) {
     axios
-      .post("http://localhost:3001/login", { username, secret })
+      .post("https://suichat.fly.dev/login", { username, secret })
       .then((response) => {
         if (response && response.data) {
           props.onAuth({ ...response.data, secret });
@@ -32,7 +32,7 @@ const onSubmit = (e) => {
       .catch((e) => console.log(JSON.stringify(e.response.data)));
   } else {
     axios
-      .post("http://localhost:3001/signup", {
+      .post("https://suichat.fly.dev/signup", {
         username,
         secret,
         email,
